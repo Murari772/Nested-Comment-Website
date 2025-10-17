@@ -1,0 +1,122 @@
+.vote-section {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 24px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.vote-btn {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6c757d;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  position: relative;
+}
+
+.vote-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: scale(1.1);
+}
+
+.vote-btn:active {
+  transform: scale(0.95);
+}
+
+.upvote-btn:hover:not(.active) {
+  color: #ff6b35;
+}
+
+.upvote-btn.active {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.upvote-btn.active:hover {
+  background: linear-gradient(135deg, #ff5722 0%, #ff7535 100%);
+  color:white;
+  transform: scale(1.05);
+}
+
+.downvote-btn:hover:not(.active) {
+  color: #6366f1;
+}
+
+.downvote-btn.active {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.downvote-btn.active:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Vote count */
+.comment-upvotes {
+  font-weight: 600;
+  font-size: 15px;
+  color: #212529;
+  min-width: 32px;
+  text-align: center;
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.vote-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.vote-btn:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.vote-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.vote-btn:disabled:hover {
+  background: transparent;
+  transform: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.comment-upvotes.updating {
+  animation: pulse 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .vote-btn {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .comment-upvotes {
+    font-size: 14px;
+    min-width: 28px;
+  }
+}
