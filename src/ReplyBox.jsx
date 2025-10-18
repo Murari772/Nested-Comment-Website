@@ -10,7 +10,7 @@ function ReplyBox({ commentId, onSubmit, onCancel }) {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:3000/reply/${commentId}`, {
+      const response = await fetch(`https://nested-comment-website-1.onrender.com/reply/${commentId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: replyText }),

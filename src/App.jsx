@@ -33,7 +33,7 @@ function App() {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/comments")
+    fetch("https://nested-comment-website-1.onrender.com/comments")
       .then((res) => res.json())
       .then((data) => setComments(data))
   }, []);
@@ -52,7 +52,7 @@ function App() {
 
   const handleVote = async (commentId, type, buttonElement) => {
     
-    const response = await fetch(`http://localhost:3000/comments/${commentId}/${type}`, {
+    const response = await fetch(`https://nested-comment-website-1.onrender.com/comments/${commentId}/${type}`, {
       method: 'POST',
     });
 
